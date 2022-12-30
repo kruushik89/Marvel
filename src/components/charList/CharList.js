@@ -4,6 +4,7 @@ import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import MarvelService from "../../services/MarveServices";
 import './charList.scss';
+import useMarvelService from "../../services/MarveServices";
 
 const CharList = ({onCharSelected}) => {
   const [charList, setCharList] = useState([]);
@@ -13,7 +14,7 @@ const CharList = ({onCharSelected}) => {
   const [charEnded, setCharEnded] = useState(false);
   const [offset, setOffset] = useState(210);
 
-  const marvelService = new MarvelService();
+  const marvelService = useMarvelService();
 
   useEffect(() => {
     onRequest();
